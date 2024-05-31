@@ -10,6 +10,8 @@ view for modifications :
     android/app/src/main/AndroidManifest.xml
     ios/Runner/Info.plist
 
+Resource : https://youtu.be/olErwzDOzuU?si=m4QbhdoQirlusbL5
+
 
 
 ## Getting Started
