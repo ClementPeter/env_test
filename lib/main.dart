@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: String.fromEnvironment('APP_NAME')),
+      home: const MyHomePage(title: 'Env_test'),
     );
   }
 }
@@ -30,6 +30,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String appName = const String.fromEnvironment('APP_NAME');
+  String baseUrl = const String.fromEnvironment('BASE_URL');
+  String apiKey = const String.fromEnvironment('API_KEY');
+
   int _counter = 0;
 
   void _incrementCounter() {
@@ -38,12 +42,16 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  final isAppName = const bool.hasEnvironment('APP_NAME')
+      ? const String.fromEnvironment('APP_NAME')
+      : 'Not available';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: const Text(String.fromEnvironment('APP_NAME')),
       ),
       body: Center(
         child: Column(
@@ -51,6 +59,13 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             const Text(
               'You have pushed the button this many times:',
+            ),
+            Text('APP NAME: $appName'),
+            Text('APP NAME: $isAppName'),
+            Text('BASE URL : $baseUrl'),
+            Text('API KEY : $apiKey'),
+            const Text(
+              'IOS APP NAME: ${const String.fromEnvironment('IOS_DISPLAY_NAME')}',
             ),
             Text(
               '$_counter',

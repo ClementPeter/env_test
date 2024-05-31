@@ -1,6 +1,16 @@
 # env_test
 
-A new Flutter project.
+A new Flutter project to setup environment varibales in Flutter Apps.
+
+Check files for more info for env setup :
+.env and config.json
+
+view for modifications :
+    android/app/build.gradle
+    android/app/src/main/AndroidManifest.xml
+    ios/Runner/Info.plist
+
+
 
 ## Getting Started
 
